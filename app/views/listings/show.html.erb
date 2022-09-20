@@ -1,0 +1,3 @@
+<h2>Room number <%= @listing.id %></h2>
+<h4>Has <%= @listing.num_room %> rooms</h4>
+<%= link_to "Delete this listing", listing_path(@listing), data: {turbo_method: :delete, turbo_confirm: "segurito?"}, class: "btn btn-warning"%>

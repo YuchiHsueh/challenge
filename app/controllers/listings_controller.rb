@@ -25,7 +25,7 @@ class ListingsController < ApplicationController
   end
 
   def update
-    if @listing.update
+    if @listing.update(listing_params)
       redirect_to listings_path
     else
       render :edit, status: :unprocessable_entity
@@ -34,12 +34,13 @@ class ListingsController < ApplicationController
 
   def destroy
     @listing.destroy
+    redirect_to listings_path, status: :see_other
   end
 
   private
 
   def listing_params
-    params.require(:listing).permit(:num_rooms)
+    params.require(:listing).permit(:num_room)
   end
 
   def set_listing

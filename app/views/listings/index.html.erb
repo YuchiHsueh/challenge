@@ -1,0 +1,6 @@
+<h2>Listing Index</h2>
+<ul>
+  <% @listings.each do |listing| %>
+    <li> Room ID <%= listing.id %>, Number of Rooms <%= listing.num_room %> </li>
+  <% end %>
+</ul>

@@ -4,5 +4,12 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  resources :listings
+  resources :listings do
+    resources :bookings, only: %i[index new create]
+    resources :missions, only: %i[index new create]
+    resources :reservations, only: %i[index new create]
+  end
+  resources :bookings, except: %i[index new create]
+  resources :missions, except: %i[index new create]
+  resources :reservations, except: %i[index new create]
 end
