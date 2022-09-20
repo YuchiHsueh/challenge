@@ -1,0 +1,7 @@
+<h2>Missions Index</h2>
+<ul>
+  <% @missions.each do |mission| %>
+    <li> Mission ID <%= mission.id %>, Price of mission <%= mission.price %>, Type of mission <%= mission.mission_type %>, Date of mission <%= mission.date %></li>
+    <%= link_to "Delete this mission", mission_path(mission), data: {turbo_method: :delete, turbo_confirm: "segurito?"}, class: "btn btn-warning"%>
+  <% end %>
+</ul>

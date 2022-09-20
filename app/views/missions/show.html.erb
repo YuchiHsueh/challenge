@@ -1,0 +1,5 @@
+<h2>Mission number <%= @mission.id %></h2>
+<h4>Type: <%= @mission.mission_type %></h4>
+<h4>Price: <%= @mission.price %></h4>
+<h4>Date: <%= @mission.date %></h4>
+<%= link_to "Delete this mission", mission_path(@mission), data: {turbo_method: :delete, turbo_confirm: "segurito?"}, class: "btn btn-warning"%>
